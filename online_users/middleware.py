@@ -2,9 +2,8 @@ from online_users.models import OnlineUserActivity
 
 
 class OnlineNowMiddleware(object):
-    """
-    Updates the OnlineUserActivity database whenever an authenticated user makes an HTTP request.
-    """
+    """Updates the OnlineUserActivity database whenever an authenticated user makes an HTTP request."""
+
     @staticmethod
     def process_request(request):
         user = request.user
