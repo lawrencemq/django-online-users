@@ -43,6 +43,15 @@ Setup
 
 3. Run ``python manage.py migrate`` to create the tables in the database.
 
+
+Rollout
+-------
+
+If this application is intended to be used in an application already in production, it's recommended that the middleware
+be added to the settings file *after* the application has been installed and the database has been migrated. Otherwise,
+HTTP requests may result in a 500 error.
+
+
 Use
 ---
 
