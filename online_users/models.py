@@ -1,11 +1,12 @@
 from datetime import timedelta
-from django.contrib.auth.models import User
+
+from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
 
 class OnlineUserActivity(models.Model):
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     last_activity = models.DateTimeField()
 
     @staticmethod

@@ -13,7 +13,7 @@ Requirements
 ------------
 
 - Python: 2.7, 3.3, 3.4, 3.5, 3.6
-- Django: 1.10+
+- Django: 1.11+
 
 
 Setup
@@ -41,7 +41,7 @@ Setup
     )
 
 
-3. Run ``python manage.py migrate`` to create the tables in the database.
+3. Run ``python manage.py makemigrations`` and ``python manage.py migrate`` to create the tables in the database.
 
 
 Rollout
@@ -88,3 +88,10 @@ OnlineUserActivity holds two values: `user`, the user in question, and `last_act
 ``OnlineUserActivity.get_user_activities()`` will return OnlineUserActivity objects for the last 15 minutes by default.
 Developers can also pass in a time delta of a different length of time for the query. The response is a QuerySet containing
 the active users during that time period, and the items are sorted in descending chronological order.
+
+
+Change Log
+------------
+
+* 0.3 - Updating to have on_delete = models.CASCADE
+* 0.2 - Updating to Django 1.11. Changed from basic User model to settings.AUTH_USER_MODEL.

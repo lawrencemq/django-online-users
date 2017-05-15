@@ -20,12 +20,12 @@ conf_kwargs = dict(
         }
     },
     SITE_ID=1,
-    MIDDLEWARE_CLASSES=(
+    MIDDLEWARE=[
         'django.middleware.common.CommonMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'online_users.middleware.OnlineNowMiddleware',
-    ),
+    ],
     INSTALLED_APPS=(
         'django.contrib.auth',
         'django.contrib.contenttypes',
