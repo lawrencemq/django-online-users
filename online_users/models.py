@@ -9,6 +9,10 @@ class OnlineUserActivity(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     last_activity = models.DateTimeField()
 
+    class Meta:
+        verbose_name = 'Online user activity'
+        verbose_name_plural = 'Online user activities'
+
     @staticmethod
     def update_user_activity(user):
         """Updates the timestamp a user has for their last action. Uses UTC time."""
